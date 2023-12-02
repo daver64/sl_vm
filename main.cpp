@@ -3,7 +3,9 @@
 
 int main(int argc, char *argv[])
 {
-    void *mem = virtual_alloc(1024*1024*1024);
-    printf("mem alloc@ %p\n",mem);
+    virtual_stats();
+    void *mem = virtual_alloc(1024 * 1024 * 1024);
+    virtual_stats();
     virtual_free(mem);
+    virtual_stats();
 }

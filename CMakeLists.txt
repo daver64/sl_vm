@@ -59,7 +59,7 @@ endif(MINGW)
 if(UNIX)
 add_executable(sl_vm_test 
     main.cpp
-    sl_vm_win32.cpp)
+    sl_vm_linux.cpp)
 endif(UNIX)
 
 
