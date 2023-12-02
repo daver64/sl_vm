@@ -21,7 +21,7 @@ endif(CMAKE_SIZEOF_VOID_P EQUAL 4)
 ##
 if(MSVC)
 set(CMAKE_BUILD_TYPE "Release")
-set(CMAKE_CXX_FLAGS "/EHsc /Qpar /GS- /O2 /D NDEBUG")
+set(CMAKE_CXX_FLAGS "/EHsc /Qpar /GS- /O2 /D NDEBUG /std:c++20")
 endif(MSVC)
 
 
@@ -29,7 +29,7 @@ endif(MSVC)
 ## Linux Compile Flags
 ##
 if(UNIX)
-set(CMAKE_CXX_FLAGS "-O2")
+set(CMAKE_CXX_FLAGS "-std=c++20 -O2")
 endif(UNIX)
 
 
