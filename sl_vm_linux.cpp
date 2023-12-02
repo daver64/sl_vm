@@ -13,6 +13,7 @@ void *virtual_alloc(const size_t numbytes)
 void virtual_free(void *pointer)
 {
     assert(pointer);
+    assert(allocmap.contains(pointer));
     size_t numbytes = allocmap[pointer];
     if (numbytes > 0)
     {
