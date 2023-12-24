@@ -4,6 +4,7 @@
 
 // test
 #include <cstdio>
+#include <cstring>
 #define VIRTUAL_ALLOC_IMPLEMENTATION
 #include "sl_vm.h"
 

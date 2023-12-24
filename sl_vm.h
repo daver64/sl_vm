@@ -57,7 +57,7 @@ void virtual_free(void *block)
     size_t numbytes = allocmap[block];
     if (numbytes > 0)
     {
-        int result = munmap(pointer, numbytes);
+        int result = munmap(block, numbytes);
         assert(result == 0);
         allocmap.erase(block);
     }
