@@ -10,11 +10,6 @@ project("sl_vm")
 if(CMAKE_SIZEOF_VOID_P EQUAL 4)
     message(FATAL_ERROR "64 bit compiler required.")
 endif(CMAKE_SIZEOF_VOID_P EQUAL 4)
-#set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "../bin")
-
-
-
-
 
 ##
 ## MSVC Compile Flags
@@ -37,30 +32,17 @@ endif(UNIX)
 ## MINGW. Not supported atm.
 ##
 if(MINGW)
-set(CMAKE_CXX_FLAGS "-O2")
+set(CMAKE_CXX_FLAGS "-std=c++20 -O2")
 endif(MINGW)
 
 
 ##
 ## Project Build.
 ##
-if(MSVC)
-add_executable(sl_vm_test 
-    main.cpp
-    sl_vm_win32.cpp)
-endif(MSVC)
 
-if(MINGW)
 add_executable(sl_vm_test 
-    main.cpp
-    sl_vm_win32.cpp)
-endif(MINGW)
+    main.cpp)
 
-if(UNIX)
-add_executable(sl_vm_test 
-    main.cpp
-    sl_vm_linux.cpp)
-endif(UNIX)
 
 
 ##
