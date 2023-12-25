@@ -1,9 +1,0 @@
-{
-    "cmake.configureOnOpen": false,
-    "files.associations": {
-        "map": "cpp",
-        "xmemory": "cpp",
-        "xtree": "cpp",
-        "xutility": "cpp"
-    }
-}
