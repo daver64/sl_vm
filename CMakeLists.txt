@@ -12,11 +12,17 @@ if(CMAKE_SIZEOF_VOID_P EQUAL 4)
 endif(CMAKE_SIZEOF_VOID_P EQUAL 4)
 
 ##
+## Compiler Requirements
+##
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+##
 ## MSVC Compile Flags
 ##
 if(MSVC)
 set(CMAKE_BUILD_TYPE "Release")
-set(CMAKE_CXX_FLAGS "/EHsc /Qpar /GS- /O2 /D NDEBUG /std:c++20")
+set(CMAKE_CXX_FLAGS "/EHsc /Qpar /GS- /O2 /D NDEBUG /W3")
 endif(MSVC)
 
 
@@ -24,15 +30,15 @@ endif(MSVC)
 ## Linux Compile Flags
 ##
 if(UNIX)
-set(CMAKE_CXX_FLAGS "-std=c++20 -O2")
+set(CMAKE_CXX_FLAGS "-O2 -Wall -Wextra")
 endif(UNIX)
 
 
 ##
-## MINGW. Not supported atm.
+## MINGW Compile Flags
 ##
 if(MINGW)
-set(CMAKE_CXX_FLAGS "-std=c++20 -O2")
+set(CMAKE_CXX_FLAGS "-O2 -Wall -Wextra")
 endif(MINGW)
 
 
